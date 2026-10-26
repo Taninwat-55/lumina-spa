@@ -1,331 +1,169 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Lumina Spa | Journey to Deep Calm</title>
-  <meta name="description" content="An award-style showcase for Lumina Spa. Scroll through a living story of massage, oils, stones and pure relaxation.">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-  <!-- Soft custom cursor -->
-  <div class="cursor"></div>
-  <div class="cursor-follower"></div>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Lumina · Harbour bath and sauna, Copenhagen</title>
+    <meta
+      name="description"
+      content="Lumina is a bathhouse on Copenhagen's harbour. Cold water, warm wood, quiet. Three rooms, one ritual: cold, heat, rest."
+    />
+    <meta name="theme-color" content="#1d2327" />
+    <link rel="preload" href="assets/fonts/newsreader.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="assets/fonts/hanken-grotesk.woff2" as="font" type="font/woff2" crossorigin />
+    <link
+      rel="preload"
+      as="image"
+      type="image/avif"
+      imagesrcset="assets/img/harbour-640.avif 640w, assets/img/harbour-1280.avif 1280w, assets/img/harbour-1920.avif 1920w"
+      imagesizes="100vw"
+      fetchpriority="high"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <a class="skip" href="#main">Skip to content</a>
 
-  <!-- Preloader -->
-  <div class="preloader" id="preloader">
-    <div class="preloader-inner">
-      <div class="preloader-logo">Lumina</div>
-      <div class="preloader-bar">
-        <div class="preloader-progress"></div>
-      </div>
-      <p class="preloader-text">Preparing your calm space</p>
-    </div>
-  </div>
+    <header class="nav">
+      <a class="wordmark" href="#top" aria-label="Lumina, home">Lumina<span>Badehus</span></a>
+      <nav aria-label="Main">
+        <ul>
+          <li><a href="#ritual">Ritual</a></li>
+          <li><a href="#rest">Rooms</a></li>
+          <li><a href="#rest">The place</a></li>
+        </ul>
+      </nav>
+      <a class="nav-book" href="#rest">Book a session</a>
+    </header>
 
-  <!-- Navigation -->
-  <nav class="nav" id="nav">
-    <a href="#hero" class="nav-logo">Lumina</a>
-    <ul class="nav-links">
-      <li><a href="#journey">Journey</a></li>
-      <li><a href="#rituals">Rituals</a></li>
-      <li><a href="#experience">Experience</a></li>
-      <li><a href="#book" class="nav-cta">Book Now</a></li>
-    </ul>
-    <button class="nav-toggle" aria-label="Open menu">
-      <span></span><span></span>
-    </button>
-  </nav>
+    <main id="main">
+      <section class="hero" id="top" aria-labelledby="hero-title">
+        <picture class="hero-media">
+          <source
+            type="image/avif"
+            srcset="assets/img/harbour-640.avif 640w, assets/img/harbour-1280.avif 1280w, assets/img/harbour-1920.avif 1920w"
+            sizes="100vw"
+          />
+          <img
+            src="assets/img/harbour-1280.webp"
+            srcset="assets/img/harbour-640.webp 640w, assets/img/harbour-1280.webp 1280w, assets/img/harbour-1920.webp 1920w"
+            sizes="100vw"
+            width="1920"
+            height="1280"
+            alt="Three shingled sauna huts on a long wooden pier over grey harbour water."
+            fetchpriority="high"
+          />
+        </picture>
 
-  <!-- Mobile menu -->
-  <div class="mobile-menu" id="mobile-menu">
-    <a href="#journey">Journey</a>
-    <a href="#rituals">Rituals</a>
-    <a href="#experience">Experience</a>
-    <a href="#book">Book Now</a>
-  </div>
+        <div class="hero-inner">
+          <p class="eyebrow hero-eyebrow">Harbour bath and sauna · Copenhagen</p>
+          <h1 class="hero-title" id="hero-title">
+            <span class="line"><span>Cold water.</span></span>
+            <span class="line"><span>Warm wood.</span></span>
+            <span class="line"><span><em>Quiet.</em></span></span>
+          </h1>
+          <dl class="hero-facts">
+            <div><dt>Water today</dt><dd>9 °C</dd></div>
+            <div><dt>Sauna</dt><dd>85 °C</dd></div>
+            <div><dt>Open daily</dt><dd>07–22</dd></div>
+          </dl>
+        </div>
+      </section>
 
-  <main>
-    <!-- 1. HERO - The Door -->
-    <section class="hero" id="hero">
-      <div class="hero-bg">
-        <div class="hero-layer layer-1"></div>
-        <div class="hero-layer layer-2"></div>
-        <div class="hero-layer layer-3"></div>
-      </div>
-      <div class="hero-content">
-        <p class="hero-eyebrow">A living scroll story</p>
-        <h1 class="hero-title">
-          <span class="line">Step into</span>
-          <span class="line">pure stillness</span>
-        </h1>
-        <p class="hero-sub">Scroll down. Feel every layer of calm open around you.</p>
-        <div class="scroll-hint">
-          <span>Begin the journey</span>
-          <div class="scroll-line"></div>
+      <section class="intro" id="ritual" aria-labelledby="intro-title">
+        <p class="eyebrow">The ritual</p>
+        <div class="intro-body">
+          <h2 class="intro-title" id="intro-title">
+            One bathhouse on the harbour. Three rooms, one rhythm: <em>cold, heat, rest.</em>
+          </h2>
+          <p class="intro-text">
+            No music and no screens. You hear the water under the deck and the stove ticking as it
+            warms. Go round as many times as you like. Most people stop after three.
+          </p>
         </div>
-      </div>
-      <div class="hero-floating">
-        <div class="float petal petal-1"></div>
-        <div class="float petal petal-2"></div>
-        <div class="float petal petal-3"></div>
-        <div class="float light light-1"></div>
-        <div class="float light light-2"></div>
-      </div>
-    </section>
+      </section>
 
-    <!-- 2. ARRIVAL - Atmosphere -->
-    <section class="arrival" id="journey">
-      <div class="arrival-sticky">
-        <div class="arrival-visual">
-          <div class="arrival-image"></div>
-          <div class="arrival-overlay"></div>
-        </div>
-        <div class="arrival-text">
-          <h2 class="section-title">You arrive.</h2>
-          <p class="section-body">The door closes behind you. Soft light. Warm wood. The quiet scent of cedar and lavender fills the air. Your shoulders drop without thinking.</p>
-        </div>
-      </div>
-    </section>
+      <section class="passage" aria-label="From the cold plunge to the sauna">
+        <div class="passage-stage">
+          <picture class="passage-media passage-cold">
+            <source
+              type="image/avif"
+              srcset="assets/img/water-640.avif 640w, assets/img/water-1280.avif 1280w, assets/img/water-1920.avif 1920w"
+              sizes="100vw"
+            />
+            <img
+              src="assets/img/water-1280.webp"
+              srcset="assets/img/water-640.webp 640w, assets/img/water-1280.webp 1280w, assets/img/water-1920.webp 1920w"
+              sizes="100vw"
+              width="1920"
+              height="2560"
+              alt="Dark harbour water under a grey sky."
+              loading="lazy"
+            />
+          </picture>
+          <picture class="passage-media passage-warm">
+            <source
+              type="image/avif"
+              srcset="assets/img/sauna-640.avif 640w, assets/img/sauna-1280.avif 1280w, assets/img/sauna-1920.avif 1920w"
+              sizes="100vw"
+            />
+            <img
+              src="assets/img/sauna-1280.webp"
+              srcset="assets/img/sauna-640.webp 640w, assets/img/sauna-1280.webp 1280w, assets/img/sauna-1920.webp 1920w"
+              sizes="100vw"
+              width="1920"
+              height="1280"
+              alt="A sauna of pale wood, its glass door open to the water at sunset."
+              loading="lazy"
+            />
+          </picture>
 
-    <!-- 3. THE OILS - First ingredient layer -->
-    <section class="oils pin-section" id="oils">
-      <div class="oils-inner">
-        <div class="oils-header">
-          <span class="layer-label">Layer 01</span>
-          <h2 class="section-title">The oils awaken</h2>
-          <p class="section-body">Each drop is chosen with care. They warm on the skin and carry the first wave of ease.</p>
-        </div>
-        <div class="oils-grid">
-          <div class="oil-card" data-oil="lavender">
-            <div class="oil-drop"></div>
-            <h3>Lavender</h3>
-            <p>Quiet mind. Soft breath.</p>
+          <div class="steam" aria-hidden="true">
+            <span></span><span></span><span></span><span></span><span></span>
           </div>
-          <div class="oil-card" data-oil="eucalyptus">
-            <div class="oil-drop"></div>
-            <h3>Eucalyptus</h3>
-            <p>Clear path. Open chest.</p>
-          </div>
-          <div class="oil-card" data-oil="sandalwood">
-            <div class="oil-drop"></div>
-            <h3>Sandalwood</h3>
-            <p>Grounded body. Steady heart.</p>
-          </div>
-          <div class="oil-card" data-oil="ylang">
-            <div class="oil-drop"></div>
-            <h3>Ylang Ylang</h3>
-            <p>Gentle lift. Warm glow.</p>
-          </div>
-        </div>
-      </div>
-    </section>
 
-    <!-- 4. THE HANDS - Massage flow -->
-    <section class="hands pin-section" id="hands">
-      <div class="hands-inner">
-        <div class="hands-visual">
-          <div class="hand-shape left-hand"></div>
-          <div class="hand-shape right-hand"></div>
-          <div class="wave wave-1"></div>
-          <div class="wave wave-2"></div>
-          <div class="wave wave-3"></div>
-        </div>
-        <div class="hands-text">
-          <span class="layer-label">Layer 02</span>
-          <h2 class="section-title">Hands that listen</h2>
-          <p class="section-body">Slow strokes. Firm pressure where the body asks. Soft circles where tension hides. The massage is never the same twice.</p>
-        </div>
-      </div>
-    </section>
+          <div class="passage-copy">
+            <p class="passage-steps eyebrow">
+              <span class="step-cold">01 Cold</span>
+              <span class="step-rule" aria-hidden="true"></span>
+              <span class="step-heat">02 Heat</span>
+            </p>
 
-    <!-- 5. HOT STONES -->
-    <section class="stones pin-section" id="stones">
-      <div class="stones-inner">
-        <div class="stones-visual">
-          <div class="stone stone-1"></div>
-          <div class="stone stone-2"></div>
-          <div class="stone stone-3"></div>
-          <div class="stone stone-4"></div>
-          <div class="stone stone-5"></div>
-          <div class="glow"></div>
-        </div>
-        <div class="stones-text">
-          <span class="layer-label">Layer 03</span>
-          <h2 class="section-title">Warm stones rest</h2>
-          <p class="section-body">Heated basalt finds the deep places. Heat sinks in. Muscles soften. Time slows to the rhythm of your breath.</p>
-        </div>
-      </div>
-    </section>
+            <p class="temp" aria-hidden="true"><span class="temp-value">9</span><span class="temp-unit">°C</span></p>
 
-    <!-- 6. WATER / FLOW -->
-    <section class="water pin-section" id="water">
-      <div class="water-inner">
-        <div class="water-bg">
-          <div class="ripple r1"></div>
-          <div class="ripple r2"></div>
-          <div class="ripple r3"></div>
-        </div>
-        <div class="water-text">
-          <span class="layer-label">Layer 04</span>
-          <h2 class="section-title">Water carries you</h2>
-          <p class="section-body">Warm towels. Soft steam. The last of the day washes away. You float between waking and dream.</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- 7. RITUALS / SERVICES -->
-    <section class="rituals" id="rituals">
-      <div class="rituals-header">
-        <span class="layer-label">Our Rituals</span>
-        <h2 class="section-title">Choose your path</h2>
-      </div>
-      <div class="rituals-track">
-        <article class="ritual-card">
-          <div class="ritual-img img-1"></div>
-          <div class="ritual-info">
-            <h3>Signature Massage</h3>
-            <p>60 or 90 minutes of full-body care. Oils chosen for your mood.</p>
-            <span class="price">from 95</span>
-          </div>
-        </article>
-        <article class="ritual-card">
-          <div class="ritual-img img-2"></div>
-          <div class="ritual-info">
-            <h3>Hot Stone Journey</h3>
-            <p>Deep heat and slow pressure. Perfect for tired muscles.</p>
-            <span class="price">from 125</span>
-          </div>
-        </article>
-        <article class="ritual-card">
-          <div class="ritual-img img-3"></div>
-          <div class="ritual-info">
-            <h3>Aromatherapy Ritual</h3>
-            <p>Custom oil blend and gentle lymphatic flow.</p>
-            <span class="price">from 110</span>
-          </div>
-        </article>
-        <article class="ritual-card">
-          <div class="ritual-img img-4"></div>
-          <div class="ritual-info">
-            <h3>Couples Stillness</h3>
-            <p>Side by side. Shared calm. Two therapists.</p>
-            <span class="price">from 210</span>
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <!-- 8. EXPERIENCE / BENEFITS -->
-    <section class="experience" id="experience">
-      <div class="exp-sticky">
-        <div class="exp-left">
-          <h2 class="section-title">What stays with you</h2>
-          <p class="section-body">This is not only a treatment. It is a reset that lasts long after you leave.</p>
-        </div>
-        <div class="exp-right">
-          <div class="benefit" data-index="1">
-            <span class="num">01</span>
-            <h3>Breath returns</h3>
-            <p>Shallow chest breathing becomes deep and free.</p>
-          </div>
-          <div class="benefit" data-index="2">
-            <span class="num">02</span>
-            <h3>Mind quiets</h3>
-            <p>Thoughts slow. Space appears between them.</p>
-          </div>
-          <div class="benefit" data-index="3">
-            <span class="num">03</span>
-            <h3>Body softens</h3>
-            <p>Chronic tension finally releases its hold.</p>
-          </div>
-          <div class="benefit" data-index="4">
-            <span class="num">04</span>
-            <h3>Sleep deepens</h3>
-            <p>Nights become longer and more restorative.</p>
+            <div class="passage-lines">
+              <h2 class="passage-line line-cold">
+                Nine degrees. Your breath goes short, <em>then slow.</em>
+              </h2>
+              <h2 class="passage-line line-warm">
+                Then heat. <span class="nowrap">Eighty-five</span> degrees, and the harbour <em>goes quiet.</em>
+              </h2>
+            </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- 9. TESTIMONIALS -->
-    <section class="voices">
-      <div class="voices-inner">
-        <span class="layer-label">Voices</span>
-        <h2 class="section-title">Words from those who stayed</h2>
-        <div class="voice-cards">
-          <blockquote class="voice">
-            <p>“I came with a heavy head. I left feeling like the weight had simply melted.”</p>
-            <cite>— Maya R.</cite>
-          </blockquote>
-          <blockquote class="voice">
-            <p>“The stones and the silence. I have never felt so held by a room.”</p>
-            <cite>— James T.</cite>
-          </blockquote>
-          <blockquote class="voice">
-            <p>“Every detail feels intentional. The oils, the light, the hands. Pure care.”</p>
-            <cite>— Elena K.</cite>
-          </blockquote>
-        </div>
-      </div>
-    </section>
+      <section class="rest" id="rest" aria-labelledby="rest-title">
+        <p class="eyebrow">03 Rest</p>
+        <h2 class="rest-title" id="rest-title">Then you rest. <em>That is the whole ritual.</em></h2>
+        <p class="rest-note">
+          Prototype: the hero and the passage from cold to heat. Rooms, the place and booking come
+          next.
+        </p>
+      </section>
+    </main>
 
-    <!-- 10. BOOK -->
-    <section class="book" id="book">
-      <div class="book-bg"></div>
-      <div class="book-content">
-        <h2 class="section-title">Your turn to rest</h2>
-        <p class="section-body">Choose a time. Walk through the door. Let the layers do the rest.</p>
-        <form class="book-form" id="book-form">
-          <div class="form-row">
-            <input type="text" name="name" placeholder="Your name" required>
-            <input type="email" name="email" placeholder="Email" required>
-          </div>
-          <div class="form-row">
-            <select name="ritual" required>
-              <option value="">Choose a ritual</option>
-              <option>Signature Massage</option>
-              <option>Hot Stone Journey</option>
-              <option>Aromatherapy Ritual</option>
-              <option>Couples Stillness</option>
-            </select>
-            <input type="date" name="date" required>
-          </div>
-          <button type="submit" class="book-btn">
-            <span>Reserve my calm</span>
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="1.5"/></svg>
-          </button>
-        </form>
-        <p class="form-note">This is a sample form. In a real project it would connect to your booking system.</p>
-      </div>
-    </section>
-  </main>
+    <footer class="footer">
+      <p>Lumina is a design concept. The bathhouse does not exist.</p>
+      <p>
+        Photos from Unsplash: Margo Evardson (harbour), Naja Bertolt Jensen (water), Lukas Kubica
+        (sauna).
+      </p>
+    </footer>
 
-  <footer class="footer">
-    <div class="footer-top">
-      <div class="footer-brand">
-        <span class="footer-logo">Lumina</span>
-        <p>A sample project made to show what an award-level spa site can feel like.</p>
-      </div>
-      <div class="footer-links">
-        <a href="#hero">Top</a>
-        <a href="#journey">Journey</a>
-        <a href="#rituals">Rituals</a>
-        <a href="#book">Book</a>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <p>© 2026 Lumina Spa Showcase. Built as a creative sample.</p>
-    </div>
-  </footer>
-
-  <!-- GSAP + ScrollTrigger + optional smooth -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.29/bundled/lenis.min.js"></script>
-  <script src="script.js"></script>
-</body>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js" defer></script>
+    <script src="script.js" defer></script>
+  </body>
 </html>
