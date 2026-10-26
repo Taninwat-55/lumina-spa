@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>The place · Lumina</title>
+    <meta
+      name="description"
+      content="Lumina sits at the end of a pier in Sydhavnen, Copenhagen. Address, opening hours, how to get there and the house rules."
+    />
+    <meta name="theme-color" content="#1d2327" />
+    <link rel="preload" href="assets/fonts/newsreader.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="assets/fonts/hanken-grotesk.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <a class="skip" href="#main">Skip to content</a>
+
+    <header class="nav">
+      <a class="wordmark" href="index.html" aria-label="Lumina, home">Lumina<span>Badehus</span></a>
+      <nav aria-label="Main">
+        <ul>
+          <li><a href="index.html#ritual">Ritual</a></li>
+          <li><a href="rooms.html">Rooms</a></li>
+          <li><a href="place.html" aria-current="page">The place</a></li>
+        </ul>
+      </nav>
+      <a class="nav-book" href="book.html">Book a session</a>
+    </header>
+
+    <main id="main">
+      <section class="hero hero--page hero--plain" aria-labelledby="page-title">
+        <div class="hero-inner">
+          <p class="eyebrow hero-eyebrow">The place</p>
+          <h1 class="hero-title" id="page-title">
+            <span class="line"><span>On the harbour,</span></span>
+            <span class="line"><span><em>at the end of the pier.</em></span></span>
+          </h1>
+          <dl class="hero-facts">
+            <div><dt>Address</dt><dd>Lysbroen 4, 2450 Copenhagen SV</dd></div>
+            <div><dt>By bike</dt><dd>12 min from the city centre</dd></div>
+            <div><dt>Water today</dt><dd>9 °C</dd></div>
+          </dl>
+        </div>
+      </section>
+
+      <div class="place">
+        <section class="place-block" aria-labelledby="getting-there">
+          <p class="eyebrow">01</p>
+          <h2 class="block-title" id="getting-there" data-reveal>Getting there</h2>
+          <p>
+            Cycle south along the harbour path from the city centre. It takes about twelve minutes,
+            and there are racks at the pier gate. The harbour bus stops four minutes away on foot.
+          </p>
+          <p>
+            Walk to the end of the pier. The three shingled huts are ours: the sauna, the changing
+            room and the rest room. The ladder into the water is on the far side.
+          </p>
+        </section>
+
+        <section class="place-block" aria-labelledby="hours">
+          <p class="eyebrow">02</p>
+          <h2 class="block-title" id="hours" data-reveal>Opening hours</h2>
+          <table class="hours">
+            <caption class="sr-only">Opening hours</caption>
+            <tbody>
+              <tr><th scope="row">Monday to Friday</th><td>07–22</td></tr>
+              <tr><th scope="row">Saturday and Sunday</th><td>08–22</td></tr>
+              <tr><th scope="row">Public holidays</th><td>10–18</td></tr>
+              <tr><th scope="row">Last entry</th><td>Two hours before closing</td></tr>
+            </tbody>
+          </table>
+        </section>
+
+        <section class="place-block" aria-labelledby="water">
+          <p class="eyebrow">03</p>
+          <h2 class="block-title" id="water" data-reveal>The water, by season</h2>
+          <p>
+            The harbour is clean enough to swim in all year. We post the temperature at the gate
+            every morning.
+          </p>
+          <dl class="seasons">
+            <div><dt>Winter</dt><dd>2–5 °C</dd></div>
+            <div><dt>Spring</dt><dd>4–11 °C</dd></div>
+            <div><dt>Summer</dt><dd>15–18 °C</dd></div>
+            <div><dt>Autumn</dt><dd>8–15 °C</dd></div>
+          </dl>
+        </section>
+
+        <section class="place-block" aria-labelledby="rules">
+          <p class="eyebrow">04</p>
+          <h2 class="block-title" id="rules" data-reveal>House rules</h2>
+          <ol class="rules">
+            <li>Shower before you go in.</li>
+            <li>Speak softly in the sauna.</li>
+            <li>Phones stay in the locker.</li>
+            <li>Swim from the ladder only. The water is three metres deep.</li>
+            <li>Leave the bench as you found it.</li>
+          </ol>
+        </section>
+      </div>
+
+      <figure class="band">
+        <picture>
+          <source
+            type="image/avif"
+            srcset="assets/img/sauna-640.avif 640w, assets/img/sauna-1280.avif 1280w, assets/img/sauna-1920.avif 1920w"
+            sizes="100vw"
+          />
+          <img
+            src="assets/img/sauna-1280.webp"
+            srcset="assets/img/sauna-640.webp 640w, assets/img/sauna-1280.webp 1280w, assets/img/sauna-1920.webp 1920w"
+            sizes="100vw"
+            width="1920"
+            height="1280"
+            alt="A sauna of pale wood, its glass door open to the water at sunset."
+            loading="lazy"
+          />
+        </picture>
+        <figcaption>The view from the top bench, around four in October.</figcaption>
+      </figure>
+
+      <section class="cta" aria-label="Book">
+        <a class="cta-link" href="book.html">
+          <span class="eyebrow">Two hours, from 245 kr</span>
+          <span class="cta-title">Book a session <span aria-hidden="true">→</span></span>
+        </a>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-top">
+        <a class="footer-mark" href="index.html">Lumina</a>
+        <div>
+          <p class="eyebrow">Find us</p>
+          <p>Lysbroen 4<br />2450 Copenhagen SV</p>
+        </div>
+        <div>
+          <p class="eyebrow">Open daily</p>
+          <p>Weekdays 07–22<br />Weekends 08–22</p>
+        </div>
+        <nav aria-label="Footer">
+          <p class="eyebrow">Pages</p>
+          <ul>
+            <li><a href="index.html#ritual">Ritual</a></li>
+            <li><a href="rooms.html">Rooms and prices</a></li>
+            <li><a href="place.html">The place</a></li>
+            <li><a href="book.html">Book a session</a></li>
+          </ul>
+        </nav>
+      </div>
+      <div class="footer-base">
+        <p>Lumina is a design concept. The bathhouse does not exist.</p>
+        <p>
+          Photos from Unsplash: Margo Evardson, Naja Bertolt Jensen, Lukas Kubica, Auroom Wellness,
+          HUUM, Taylor Ulmer.
+        </p>
+      </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js" defer></script>
+    <script src="script.js" defer></script>
+  </body>
+</html>

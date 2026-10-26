@@ -1,12 +1,100 @@
-// Lumina: smooth scroll and one scroll-scrubbed moment, the passage from cold
-// to heat. Everything here is an enhancement: without JS, or with reduced
-// motion, the page shows the warm room and both lines as plain content.
+// Lumina: the booking form, smooth scroll, and one scroll-scrubbed moment (the
+// passage from cold to heat). Motion is an enhancement: without JS, or with
+// reduced motion, every page reads as plain content.
+
+// ---------- Booking (runs with or without motion) ----------
+(() => {
+  const form = document.querySelector(".booking-form");
+  if (!form) return;
+
+  const sessions = form.querySelectorAll('input[name="session"]');
+  const slots = form.querySelectorAll('input[name="time"]');
+  const date = form.querySelector("#date");
+  const guests = form.querySelector("#guests");
+  const summary = document.querySelector("[data-summary]");
+  const total = document.querySelector("[data-total]");
+  const error = form.querySelector("[data-error]");
+  const kr = new Intl.NumberFormat("en-DK");
+  const dayFormat = new Intl.DateTimeFormat("en-GB", { weekday: "short", day: "numeric", month: "short" });
+
+  // No booking in the past. Local date, not UTC, so late evening still means today.
+  const now = new Date();
+  date.min = new Date(now.getTime() - now.getTimezoneOffset() * 60000).toISOString().slice(0, 10);
+
+  const chosen = (name) => form.querySelector(`input[name="${name}"]:checked`);
+
+  // Each session only has the slots it runs in: morning at 07:00, private in the evening.
+  function syncSlots() {
+    const session = chosen("session")?.value;
+    slots.forEach((slot) => {
+      const allowed = !session || slot.dataset.for.split(" ").includes(session);
+      slot.disabled = !allowed;
+      if (!allowed) slot.checked = false;
+    });
+  }
+
+  function update() {
+    const session = chosen("session");
+    const time = chosen("time");
+    const count = Number(guests.value);
+    const price = session ? Number(session.dataset.price) : 0;
+    total.textContent = kr.format("flat" in (session?.dataset ?? {}) ? price : price * count);
+
+    const parts = [];
+    if (session) parts.push(session.closest("label").querySelector(".choice-name").textContent);
+    if (date.value) parts.push(dayFormat.format(new Date(`${date.value}T12:00`)));
+    if (time) parts.push(time.value);
+    parts.push(`${count} ${count === 1 ? "guest" : "guests"}`);
+    summary.textContent = session ? parts.join(" · ") : "Choose a session, a day and a time.";
+  }
+
+  form.addEventListener("change", (event) => {
+    if (event.target.name === "session") syncSlots();
+    event.target.removeAttribute("aria-invalid");
+    update();
+  });
+
+  form.addEventListener("submit", (event) => {
+    event.preventDefault();
+    const missing = [];
+    if (!chosen("session")) missing.push("a session");
+    if (!date.value || date.value < date.min) missing.push("a day from today on");
+    if (!chosen("time")) missing.push("a time");
+    for (const field of form.querySelectorAll("#name, #email")) {
+      const ok = field.checkValidity() && field.value.trim();
+      field.setAttribute("aria-invalid", String(!ok));
+      if (!ok) missing.push(field.id === "email" ? "a valid email" : "your name");
+    }
+    date.setAttribute("aria-invalid", String(!date.value || date.value < date.min));
+
+    if (missing.length) {
+      error.textContent = `Almost there. Please add ${missing.join(", ")}.`;
+      error.hidden = false;
+      return;
+    }
+
+    const confirmation = document.querySelector("[data-confirmation]");
+    const name = form.querySelector("#name").value.trim().split(" ")[0];
+    confirmation.querySelector("[data-confirmation-title]").textContent = `Thank you, ${name}.`;
+    confirmation.querySelector("[data-confirmation-text]").textContent =
+      `${summary.textContent}, ${total.textContent} kr.`;
+    form.hidden = true;
+    confirmation.hidden = false;
+    confirmation.querySelector("[data-confirmation-title]").focus();
+  });
+
+  syncSlots();
+  update();
+})();
+
+// ---------- Motion ----------
 (() => {
   const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   if (reduce || !window.gsap || !window.ScrollTrigger) return;
 
   gsap.registerPlugin(ScrollTrigger);
   document.documentElement.classList.add("motion");
+  const has = (selector) => document.querySelector(selector) !== null;
 
   // Lenis owns the scroll; ScrollTrigger reads the same position on every frame.
   if (window.Lenis) {
@@ -15,7 +103,7 @@
     gsap.ticker.add((time) => lenis.raf(time * 1000));
     gsap.ticker.lagSmoothing(0);
 
-    // In-page links glide too. The skip link keeps the native jump, so focus moves with it.
+    // Same-page links glide too. The skip link keeps the native jump, so focus moves with it.
     document.querySelectorAll('a[href^="#"]:not(.skip)').forEach((link) => {
       link.addEventListener("click", (event) => {
         const target = document.querySelector(link.getAttribute("href"));
@@ -26,21 +114,25 @@
     });
   }
 
-  // Hero: the harbour sinks a little slower than the page, the type lifts away.
-  gsap.to(".hero-media", {
-    yPercent: 18,
-    ease: "none",
-    scrollTrigger: { trigger: ".hero", start: "top top", end: "bottom top", scrub: true },
-  });
-  gsap.to(".hero-inner", {
-    opacity: 0,
-    y: -60,
-    ease: "none",
-    scrollTrigger: { trigger: ".hero", start: "top top", end: "60% top", scrub: true },
-  });
+  // Hero: the photo sinks a little slower than the page, the type lifts away.
+  if (has(".hero-media")) {
+    gsap.to(".hero-media", {
+      yPercent: 18,
+      ease: "none",
+      scrollTrigger: { trigger: ".hero", start: "top top", end: "bottom top", scrub: true },
+    });
+  }
+  if (has(".hero-inner")) {
+    gsap.to(".hero-inner", {
+      opacity: 0,
+      y: -60,
+      ease: "none",
+      scrollTrigger: { trigger: ".hero", start: "top top", end: "60% top", scrub: true },
+    });
+  }
 
   // Headings come into focus as they arrive, the same way the steam clears.
-  gsap.utils.toArray(".intro-title, .rest-title").forEach((heading) => {
+  gsap.utils.toArray(".intro-title, .rest-title, [data-reveal]").forEach((heading) => {
     gsap.from(heading, {
       opacity: 0,
       y: 30,
@@ -50,6 +142,24 @@
       scrollTrigger: { trigger: heading, start: "top 85%", once: true },
     });
   });
+
+  // Room photos settle into their frames.
+  gsap.utils.toArray(".room-media img, .band img").forEach((image) => {
+    gsap.fromTo(
+      image,
+      { scale: 1.15 },
+      {
+        scale: 1,
+        ease: "none",
+        scrollTrigger: { trigger: image.closest("picture, figure"), start: "top bottom", end: "bottom top", scrub: true },
+      },
+    );
+  });
+
+  // Webfonts change line heights, so measure again once they are in.
+  document.fonts?.ready.then(() => ScrollTrigger.refresh());
+
+  if (!has(".passage")) return;
 
   // The passage. Timeline positions are fractions of the scroll track:
   // 0–0.2 cold holds, 0.2–0.65 the heat rises, 0.6–0.85 the warm line focuses, then it holds.
@@ -94,6 +204,4 @@
     )
     .to({}, { duration: 0.15 }, 0.85);
 
-  // Webfonts change line heights, so measure again once they are in.
-  document.fonts?.ready.then(() => ScrollTrigger.refresh());
 })();

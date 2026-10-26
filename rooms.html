@@ -1,0 +1,248 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Rooms and prices · Lumina</title>
+    <meta
+      name="description"
+      content="The cold plunge, the wood-fired sauna and the rest room at Lumina, a bathhouse on Copenhagen's harbour. Two hours from 245 kr."
+    />
+    <meta name="theme-color" content="#1d2327" />
+    <link rel="preload" href="assets/fonts/newsreader.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="assets/fonts/hanken-grotesk.woff2" as="font" type="font/woff2" crossorigin />
+    <link
+      rel="preload"
+      as="image"
+      type="image/avif"
+      imagesrcset="assets/img/benches-640.avif 640w, assets/img/benches-1280.avif 1280w, assets/img/benches-1920.avif 1920w"
+      imagesizes="100vw"
+      fetchpriority="high"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <a class="skip" href="#main">Skip to content</a>
+
+    <header class="nav">
+      <a class="wordmark" href="index.html" aria-label="Lumina, home">Lumina<span>Badehus</span></a>
+      <nav aria-label="Main">
+        <ul>
+          <li><a href="index.html#ritual">Ritual</a></li>
+          <li><a href="rooms.html" aria-current="page">Rooms</a></li>
+          <li><a href="place.html">The place</a></li>
+        </ul>
+      </nav>
+      <a class="nav-book" href="book.html">Book a session</a>
+    </header>
+
+    <main id="main">
+      <section class="hero hero--page" aria-labelledby="page-title">
+        <picture class="hero-media">
+          <source
+            type="image/avif"
+            srcset="assets/img/benches-640.avif 640w, assets/img/benches-1280.avif 1280w, assets/img/benches-1920.avif 1920w"
+            sizes="100vw"
+          />
+          <img
+            src="assets/img/benches-1280.webp"
+            srcset="assets/img/benches-640.webp 640w, assets/img/benches-1280.webp 1280w, assets/img/benches-1920.webp 1920w"
+            sizes="100vw"
+            width="1920"
+            height="1200"
+            alt="Curved benches of pale wood around a black stove piled with white stones."
+            fetchpriority="high"
+          />
+        </picture>
+        <div class="hero-inner">
+          <p class="eyebrow hero-eyebrow">Rooms and prices</p>
+          <h1 class="hero-title" id="page-title">
+            <span class="line"><span>Three rooms,</span></span>
+            <span class="line"><span><em>one rhythm.</em></span></span>
+          </h1>
+        </div>
+      </section>
+
+      <div class="rooms">
+        <article class="room" aria-labelledby="room-cold">
+          <picture class="room-media">
+            <source
+              type="image/avif"
+              srcset="assets/img/water-640.avif 640w, assets/img/water-1280.avif 1280w"
+              sizes="(max-width: 860px) 100vw, 42vw"
+            />
+            <img
+              src="assets/img/water-1280.webp"
+              srcset="assets/img/water-640.webp 640w, assets/img/water-1280.webp 1280w"
+              sizes="(max-width: 860px) 100vw, 42vw"
+              width="1280"
+              height="1707"
+              alt="Dark harbour water under a grey sky."
+              loading="lazy"
+            />
+          </picture>
+          <div class="room-body">
+            <p class="eyebrow">01 Cold</p>
+            <h2 class="room-title" id="room-cold" data-reveal>The plunge</h2>
+            <p>
+              The harbour itself. A ladder goes down from the deck into three metres of clear, salty
+              water. Go in slowly or all at once. Either way, your breath settles after the first ten
+              seconds.
+            </p>
+            <dl class="specs">
+              <div><dt>Water</dt><dd>2–18 °C, by season</dd></div>
+              <div><dt>Depth</dt><dd>3 m, ladder from the deck</dd></div>
+              <div><dt>Stay</dt><dd>30 seconds to 2 minutes</dd></div>
+            </dl>
+          </div>
+        </article>
+
+        <article class="room" aria-labelledby="room-heat">
+          <picture class="room-media">
+            <source
+              type="image/avif"
+              srcset="assets/img/ladle-640.avif 640w, assets/img/ladle-1280.avif 1280w"
+              sizes="(max-width: 860px) 100vw, 42vw"
+            />
+            <img
+              src="assets/img/ladle-1280.webp"
+              srcset="assets/img/ladle-640.webp 640w, assets/img/ladle-1280.webp 1280w"
+              sizes="(max-width: 860px) 100vw, 42vw"
+              width="1280"
+              height="1920"
+              alt="A ladle pours water onto a cage of sauna stones, a bare foot on the bench behind."
+              loading="lazy"
+            />
+          </picture>
+          <div class="room-body">
+            <p class="eyebrow">02 Heat</p>
+            <h2 class="room-title" id="room-heat" data-reveal>The sauna</h2>
+            <p>
+              Wood-fired and lined with aspen, with a glass wall onto the water. Every hour on the
+              half hour, the sauna master pours water on the stones, a saunagus, and the heat rolls
+              down from the top bench.
+            </p>
+            <dl class="specs">
+              <div><dt>Heat</dt><dd>80–90 °C</dd></div>
+              <div><dt>Seats</dt><dd>12, on three benches</dd></div>
+              <div><dt>Saunagus</dt><dd>Every hour at :30</dd></div>
+            </dl>
+          </div>
+        </article>
+
+        <article class="room" aria-labelledby="room-rest">
+          <picture class="room-media">
+            <source
+              type="image/avif"
+              srcset="assets/img/towel-640.avif 640w, assets/img/towel-1280.avif 1280w"
+              sizes="(max-width: 860px) 100vw, 42vw"
+            />
+            <img
+              src="assets/img/towel-1280.webp"
+              srcset="assets/img/towel-640.webp 640w, assets/img/towel-1280.webp 1280w"
+              sizes="(max-width: 860px) 100vw, 42vw"
+              width="1280"
+              height="1920"
+              alt="A white towel on a hook in low evening sun, the sauna bench out of focus behind it."
+              loading="lazy"
+            />
+          </picture>
+          <div class="room-body">
+            <p class="eyebrow">03 Rest</p>
+            <h2 class="room-title" id="room-rest" data-reveal>The rest room</h2>
+            <p>
+              Wool blankets, low chairs and windows that face west over the harbour. There is tea,
+              water and rye crisps. Nobody talks much in here, and nobody needs to.
+            </p>
+            <dl class="specs">
+              <div><dt>On the table</dt><dd>Tea, water, rye crisps</dd></div>
+              <div><dt>Bring</dt><dd>Nothing; robes are here</dd></div>
+              <div><dt>Sound</dt><dd>The harbour, mostly</dd></div>
+            </dl>
+          </div>
+        </article>
+      </div>
+
+      <section class="prices" aria-labelledby="prices-title">
+        <div class="prices-head">
+          <p class="eyebrow">Prices</p>
+          <h2 class="prices-title" id="prices-title" data-reveal>Pay for time, <em>not for treatments.</em></h2>
+          <p class="prices-note">
+            Every session includes all three rooms. Prices in Danish kroner, VAT included. Children
+            under 15 swim free with an adult.
+          </p>
+        </div>
+        <table class="price-table">
+          <caption class="sr-only">Prices</caption>
+          <thead class="sr-only">
+            <tr><th scope="col">Session</th><th scope="col">Price</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">Session<span>Two hours, any time we are open</span></th>
+              <td>245 kr</td>
+            </tr>
+            <tr>
+              <th scope="row">Morning<span>07–09 on weekdays</span></th>
+              <td>165 kr</td>
+            </tr>
+            <tr>
+              <th scope="row">Ten sessions<span>A clip card you can share, valid for a year</span></th>
+              <td>2,050 kr</td>
+            </tr>
+            <tr>
+              <th scope="row">Private sauna<span>Up to 8 people, two hours, evenings only</span></th>
+              <td>2,400 kr</td>
+            </tr>
+            <tr>
+              <th scope="row">Robe and towel<span>If you would rather not bring your own</span></th>
+              <td>45 kr</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section class="cta" aria-label="Book">
+        <a class="cta-link" href="book.html">
+          <span class="eyebrow">Two hours, from 245 kr</span>
+          <span class="cta-title">Book a session <span aria-hidden="true">→</span></span>
+        </a>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-top">
+        <a class="footer-mark" href="index.html">Lumina</a>
+        <div>
+          <p class="eyebrow">Find us</p>
+          <p>Lysbroen 4<br />2450 Copenhagen SV</p>
+        </div>
+        <div>
+          <p class="eyebrow">Open daily</p>
+          <p>Weekdays 07–22<br />Weekends 08–22</p>
+        </div>
+        <nav aria-label="Footer">
+          <p class="eyebrow">Pages</p>
+          <ul>
+            <li><a href="index.html#ritual">Ritual</a></li>
+            <li><a href="rooms.html">Rooms and prices</a></li>
+            <li><a href="place.html">The place</a></li>
+            <li><a href="book.html">Book a session</a></li>
+          </ul>
+        </nav>
+      </div>
+      <div class="footer-base">
+        <p>Lumina is a design concept. The bathhouse does not exist.</p>
+        <p>
+          Photos from Unsplash: Margo Evardson, Naja Bertolt Jensen, Lukas Kubica, Auroom Wellness,
+          HUUM, Taylor Ulmer.
+        </p>
+      </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js" defer></script>
+    <script src="script.js" defer></script>
+  </body>
+</html>

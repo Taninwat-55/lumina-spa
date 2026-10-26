@@ -25,15 +25,15 @@
     <a class="skip" href="#main">Skip to content</a>
 
     <header class="nav">
-      <a class="wordmark" href="#top" aria-label="Lumina, home">Lumina<span>Badehus</span></a>
+      <a class="wordmark" href="index.html" aria-label="Lumina, home">Lumina<span>Badehus</span></a>
       <nav aria-label="Main">
         <ul>
           <li><a href="#ritual">Ritual</a></li>
-          <li><a href="#rest">Rooms</a></li>
-          <li><a href="#rest">The place</a></li>
+          <li><a href="rooms.html">Rooms</a></li>
+          <li><a href="place.html">The place</a></li>
         </ul>
       </nav>
-      <a class="nav-book" href="#rest">Book a session</a>
+      <a class="nav-book" href="book.html">Book a session</a>
     </header>
 
     <main id="main">
@@ -146,19 +146,60 @@
       <section class="rest" id="rest" aria-labelledby="rest-title">
         <p class="eyebrow">03 Rest</p>
         <h2 class="rest-title" id="rest-title">Then you rest. <em>That is the whole ritual.</em></h2>
-        <p class="rest-note">
-          Prototype: the hero and the passage from cold to heat. Rooms, the place and booking come
-          next.
-        </p>
+        <ul class="next-links">
+          <li>
+            <a href="rooms.html">
+              <span class="eyebrow">Rooms and prices</span>
+              <span class="next-title">The plunge, the sauna, the rest room</span>
+              <span class="next-arrow" aria-hidden="true">→</span>
+            </a>
+          </li>
+          <li>
+            <a href="place.html">
+              <span class="eyebrow">The place</span>
+              <span class="next-title">At the end of the pier, Sydhavnen</span>
+              <span class="next-arrow" aria-hidden="true">→</span>
+            </a>
+          </li>
+          <li>
+            <a href="book.html">
+              <span class="eyebrow">Book</span>
+              <span class="next-title">Two hours, from 245 kr</span>
+              <span class="next-arrow" aria-hidden="true">→</span>
+            </a>
+          </li>
+        </ul>
       </section>
     </main>
 
     <footer class="footer">
-      <p>Lumina is a design concept. The bathhouse does not exist.</p>
-      <p>
-        Photos from Unsplash: Margo Evardson (harbour), Naja Bertolt Jensen (water), Lukas Kubica
-        (sauna).
-      </p>
+      <div class="footer-top">
+        <a class="footer-mark" href="index.html">Lumina</a>
+        <div>
+          <p class="eyebrow">Find us</p>
+          <p>Lysbroen 4<br />2450 Copenhagen SV</p>
+        </div>
+        <div>
+          <p class="eyebrow">Open daily</p>
+          <p>Weekdays 07–22<br />Weekends 08–22</p>
+        </div>
+        <nav aria-label="Footer">
+          <p class="eyebrow">Pages</p>
+          <ul>
+            <li><a href="index.html#ritual">Ritual</a></li>
+            <li><a href="rooms.html">Rooms and prices</a></li>
+            <li><a href="place.html">The place</a></li>
+            <li><a href="book.html">Book a session</a></li>
+          </ul>
+        </nav>
+      </div>
+      <div class="footer-base">
+        <p>Lumina is a design concept. The bathhouse does not exist.</p>
+        <p>
+          Photos from Unsplash: Margo Evardson, Naja Bertolt Jensen, Lukas Kubica, Auroom Wellness,
+          HUUM, Taylor Ulmer.
+        </p>
+      </div>
     </footer>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
